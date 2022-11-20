@@ -1,8 +1,12 @@
 import * as express from "express";
 import * as bodyParser from "body-parser";
 import { json, urlencoded } from "body-parser";
+import * as dotenv from "dotenv";
+dotenv.config();
 const app: Application = express();
-const PORT: number = 4000;
+import config from "../../config";
+const PORT = Number(process.env.PORT) | 4000;
+
 import { Response, Request } from "express";
 import router from "../api/router/route";
 import { Application } from "express";
